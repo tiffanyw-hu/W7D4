@@ -1,20 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { fetchAllPokemon } from "./util/api_util";
-import { receiveAllPokemon, requestAllPokemon } from './actions/pokemon_actions';
+import Root from './components/root';
 import configureStore from './store/store';
-import { selectAllPokemon } from './reducers/selectors';
+import { HashRouter, Route } from 'react-router-dom';
 
-window.fetchAllPokemon = fetchAllPokemon;
-window.receiveAllPokemon = receiveAllPokemon;
-window.requestAllPokemon = requestAllPokemon;
-window.store = configureStore();
-window.selectAllPokemon = selectAllPokemon;
+// import { fetchAllPokemon } from "./util/api_util";
+// import { receiveAllPokemon, requestAllPokemon } from './actions/pokemon_actions';
+// import { selectAllPokemon } from './reducers/selectors';
+
+// window.fetchAllPokemon = fetchAllPokemon;
+// window.receiveAllPokemon = receiveAllPokemon;
+// window.requestAllPokemon = requestAllPokemon;
+// window.store = configureStore();
+// window.selectAllPokemon = selectAllPokemon;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const root = document.getElementById('root');
   const store = configureStore();
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  ReactDOM.render(<h1>Pokedex</h1>,root);
+  const root = document.getElementById('root');
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  ReactDOM.render(<Root store={store} />,root);
 });
