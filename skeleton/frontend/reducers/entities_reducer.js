@@ -3,4 +3,5 @@ import { pokemonReducer } from './pokemon_reducer';
 
 export const entitiesReducer = combineReducers({
   pokemon: pokemonReducer,
+
 });
