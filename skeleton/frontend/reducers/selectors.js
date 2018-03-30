@@ -5,3 +5,14 @@ export const selectAllPokemon = (state) => (
   // Object.keys(state.entities.pokemon).map(id => (state.entities.pokemon[id]))
 
 );
+
+
+export const selectOnePokemon = (state) => (
+  // pojo of a single pokemon
+  state.entities.pokemon
+);
+
+export const selectItems = (state) => (
+  // array of items
+  values(state.entities.items)
+);

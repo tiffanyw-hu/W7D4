@@ -4,15 +4,15 @@ import Root from './components/root';
 import configureStore from './store/store';
 import { HashRouter, Route } from 'react-router-dom';
 
-// import { fetchAllPokemon } from "./util/api_util";
-// import { receiveAllPokemon, requestAllPokemon } from './actions/pokemon_actions';
-// import { selectAllPokemon } from './reducers/selectors';
+import { fetchAllPokemon, fetchOnePokemon } from "./util/api_util";
+import { receiveAllPokemon, requestAllPokemon , receiveOnePokemon, requestSinglePokemon } from './actions/pokemon_actions';
+import { selectAllPokemon } from './reducers/selectors';
 
-// window.fetchAllPokemon = fetchAllPokemon;
-// window.receiveAllPokemon = receiveAllPokemon;
-// window.requestAllPokemon = requestAllPokemon;
-// window.store = configureStore();
-// window.selectAllPokemon = selectAllPokemon;
+window.fetchOnePokemon = fetchOnePokemon;
+window.receiveOnePokemon = receiveOnePokemon;
+window.requestSinglePokemon = requestSinglePokemon;
+window.store = configureStore();
+window.selectAllPokemon = selectAllPokemon;
 
 document.addEventListener("DOMContentLoaded", () => {
   const store = configureStore();
